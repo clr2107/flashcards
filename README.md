@@ -58,9 +58,14 @@ Design a scheme for your app and present to an instructor.
 
 ### 5. Presentation
 
-  **Due:** 5:30pm
+**Due:** 5:30pm
 
-  Work with your group to come up with a presentation to present to us.
+Work with your group to present to the cohort
+- what you built
+- process you utilized
+- decisions made throughout the project (e.g. what did you do when there wasn't enough time for x,y,z?)
+- lessons learned
+- retrospectively what would you do differently next time
 
 ## Conclusion
   The application we built in this challenge represents a step up in complexity compared to our previous web application challenges—both technically and organizationally.  This challenge is as much about project management and team dynamics as it is about the code.  What skills/lessons did you learn from working with a team?  How will you work better next time?
