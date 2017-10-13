@@ -1,0 +1,25 @@
+thierry = User.create!(username: "thierry", email: "t@t.com", password: "1234")
+thomas = User.create!(username: "thomas", email: "tr@t.com", password: "1234")
+amber = User.create!(username: "amber", email: "a@t.com", password: "1234")
+catherine = User.create!(username: "catherine", email: "c@t.com", password: "1234")
+phil = User.create!(username: "phil", email: "p@t.com", password: "1234")
+
+deck1 = Deck.create!(name: "Simple Math", user: thierry)
+deck2 = Deck.create!(name: "State and Capital", user: catherine)
+
+card1 = Card.create!(question: "1+1", answer: "2", deck: deck1)
+card2 = Card.create!(question: "1+2", answer: "3", deck: deck1)
+card3 = Card.create!(question: "1+3", answer: "4", deck: deck1)
+card4 = Card.create!(question: "New York", answer: "Albany", deck: deck2)
+card5 = Card.create!(question: "New Jersey", answer: "Trenton", deck: deck2)
+
+round1 = Round.create!(user: amber, deck: deck1)
+guess1 = Guess.create!(card: card2, round: round1, correct: 1, text: "3")
+guess2 = Guess.create!(card: card3, round: round1, correct: 1, text: "4")
+guess3 = Guess.create!(card: card1, round: round1, correct: 1, text: "2")
+
+round2 = Round.create!(user: phil, deck: deck2)
+guess1 = Guess.create!(card: card4, round: round2, correct: 0, text: "Cat")
+guess2 = Guess.create!(card: card5, round: round2, correct: 0, text: "Dog")
+guess3 = Guess.create!(card: card4, round: round2, correct: 1, text: "Albany")
+guess2 = Guess.create!(card: card5, round: round2, correct: 1, text: "Trenton")
