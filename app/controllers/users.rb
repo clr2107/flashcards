@@ -21,10 +21,14 @@ get '/login' do
 end
 
 post '/login' do
-  @user = User.find_by(username: params[:username])
-  if @user && @user.authenticate(params[:password])
-    sessions[:user_id] = @user.id
-    redirect '/users/#{@user.id}'
+  @user = User.find_by(username: params[:user][:username])
+  @user = @user.authenticate(params[:user][:password])
+  if @user
+  # @user = User.find_by(username: params[:username])
+  # binding.pry
+  # if @user && @user.authenticate(params[:password])
+    session[:user_id] = @user.id
+    redirect "/users/#{@user.id}"
   else
     @error = "invalid login"
     erb :'/users/login'
