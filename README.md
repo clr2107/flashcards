@@ -60,7 +60,7 @@ Design a scheme for your app and present to an instructor.
 
 **Due:** 5:30pm
 
-Work with your group to present to the cohort
+Work with your group on a presentation for your cohort
 - what you built
 - process you utilized
 - decisions made throughout the project (e.g. what did you do when there wasn't enough time for x,y,z?)
