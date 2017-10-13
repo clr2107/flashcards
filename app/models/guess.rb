@@ -1,4 +1,6 @@
 class Guess < ApplicationRecord
-  belongs_to :card
-  belongs_to :round
+  validates :text, presence: true
+
+  belongs_to :card, foreign_key: true
+  belongs_to :round, foreign_key: true
 end

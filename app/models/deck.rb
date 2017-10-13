@@ -1,7 +1,8 @@
 class Deck < ApplicationRecord
-  belongs_to: user
-  has_many: cards, dependent: destroy
-  has_many: rounds, dependent: destroy
+  validates :name, presence: true
 
-  validates :name, :user_id, presence: true
+  belongs_to :user, foreign_key: true
+  has_many :cards
+  has_many :rounds
+
 end
