@@ -26,7 +26,7 @@ Design a scheme for your app and present to an instructor.
 
 ### 2. Round description  
 
-  **Due:** 2:00pm
+  **Due:** 2:30pm
 
   After a user selects a deck, they play a round.  We have specific requirements for what should happen when a user plays a  round.
 
@@ -38,7 +38,7 @@ Design a scheme for your app and present to an instructor.
 
 ### 3. Round statistics description
 
-  **Due:** 3:00pm
+  **Due:** 3:30pm
 
   After a user completes a round, the user should be shown statistics for the round.  We have specific requirements for what statistics should be displayed.
 
@@ -48,7 +48,7 @@ Design a scheme for your app and present to an instructor.
 
 ### 4. Profile description
 
-  **Due:** 4:00pm
+  **Due:** 4:30pm
 
   Registered users should have a profile page that showcases their flashcard history.
 
