@@ -3,7 +3,7 @@ def current_user
 end
 
 def logged_in?
-  !!user_loggedin
+  !!current_user
 end
 
 def require_user

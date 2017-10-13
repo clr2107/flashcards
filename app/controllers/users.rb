@@ -13,6 +13,7 @@ post '/users' do
 end
 
 get '/users/:id' do
+  @decks = Deck.all
   @user = User.find(params[:id])
   erb :'/users/show'
 end
@@ -33,7 +34,23 @@ post '/login' do
   end
 end
 
+get '/decks/:deck_id/round/new' do
+  @deck = Deck.find_by(id: params[:deck_id])
+  current_user
+  @new_round = Round.new(user_id: current_user.id, deck_id: @deck.id)
+  if @new_round.save
+    redirect "decks/#{@deck.id}/round/#{@new_round.id}"
+  else
+    # @error =
+    redirect "/"
+  end
+end
 
+get "/decks/:deck_id/round/:round_id" do
+
+  "Reach here"
+  # @deck = Deck.find_by(id: :deck_id)
+end
 
 
 
