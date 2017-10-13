@@ -1,3 +1,4 @@
+
 get "/users/new" do
   erb :'users/new'
 end
@@ -23,10 +24,7 @@ end
 post '/login' do
   @user = User.find_by(username: params[:user][:username])
   @user = @user.authenticate(params[:user][:password])
-  if @user
-  # @user = User.find_by(username: params[:username])
-  # binding.pry
-  # if @user && @user.authenticate(params[:password])
+  if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
     redirect "/users/#{@user.id}"
   else
