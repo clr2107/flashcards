@@ -47,10 +47,18 @@ get '/decks/:deck_id/round/new' do
 end
 
 get "/decks/:deck_id/round/:round_id" do
-
-  "Reach here"
-  # @deck = Deck.find_by(id: :deck_id)
+  @deck = Deck.find_by(id: params[:deck_id])
+  @cards = @deck.cards
+  erb :'/decks/show'
 end
+
+get "/decks/:deck_id/round/:round_id/_answer" do
+  @deck = Deck.find_by(id: params[:deck_id])
+  current_user
+  @round = Round.find_by(id: params[:round_id])
+  erb :'/decks/_answer'
+
+  end
 
 
 

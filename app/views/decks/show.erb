@@ -1,0 +1,9 @@
+<div>
+<h1>Question 1</h1>
+<%@card.each do |card|%>
+  <%=card.question%>
+<%end%>
+<%=@cards.first.question%>
+
+<p><a href="/decks/<%=@deck.id%>/round/<%=@round.id%>/_answer">Click here to see the answer</a></p>
+</div>
