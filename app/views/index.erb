@@ -1,20 +1,15 @@
-
 <h1>Welcome to Flashcards</h1>
-
 <% if logged_in? %>
-<p><a href="/logout">Logout</a></p>
-<h1> All Decks </h1>
-  <%if @decks %>
-  <%@decks.each do |deck| %>
-  <ul>
-    <li><a href="decks/<%=deck.id%>/round/new"><%=deck.name%></a></li>
-  </ul>
-    <%end%>
-<%end%>
-<%else %>
-
+  <p><a href="/logout">Logout</a></p>
+  <h1> All Decks </h1>
+    <%if @decks %>
+      <%@decks.each do |deck| %>
+        <ul>
+          <li><a href="decks/<%=deck.id%>/round/new"><%=deck.name%></a></li>
+        </ul>
+      <% end %>
+  <% end %>
+<% else %>
 <p><a href="/login">Login</a></p>
 <p><a href="/users/new">Register</a></p>
-
-
 <% end %>

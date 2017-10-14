@@ -37,14 +37,18 @@
 # Guess.create!(card_id: 6, round_id: 3, correct: 0, text: "zdlkghldkghs")
 # Guess.create!(card_id: 6, round_id: 3, correct: 1, text: "Hypertext markup language")
 
-# Guess.delete_all
-# Round.delete_all
-# Card.delete_all
-# Deck.delete_all
-# User.delete_all
+Guess.delete_all
+Round.delete_all
+Card.delete_all
+Deck.delete_all
+User.delete_all
 
 User.create(username: "cat", email: "cat@cat.com", password: "cat1")
+
 Deck.create(name: "Computer Science", user_id: 1)
 Card.create(question: "What does HTML stand for?", answer: "Hypertext markup language", deck_id: 1)
+Card.create(question: "What does CSS stand for?", answer: "Cascading style sheets", deck_id: 1)
+Card.create(question: "What does HTTP stand for?", answer: "Hypertext transfer protocol", deck_id: 1)
+
 Round.create(user_id: 1, deck_id: 1)
-Guess.create(text: "Hypertext markup language", correct: 1, round_id: 1, card_id: 1)
+
