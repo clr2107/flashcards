@@ -27,3 +27,9 @@ padding: 10px;
   display: block;
   float: right;
 }
+
+table, th, td {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+}

@@ -1,4 +1,32 @@
 <h1>Your Stats</h1>
+<container>
+<h1>Deck: Computer Science</h1>
+<table>
+  <tr>
+    <td>Date</td>
+  <td>Time</td>
+  <td>Cards in Deck</td>
+  <td>First Guess Correct</td>
+  <td>Total Guesses</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+</container>
+<br />
 Total guesses: <%=current_user.guesses.count%>
 <br />
 Correct guesses: <%=current_user.guesses.where(correct: 1).count%>
+

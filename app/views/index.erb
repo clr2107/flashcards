@@ -2,8 +2,6 @@
 <h1 id="flashcards">Welcome to Flashcards</h1>
 <% if current_user %>
 <h3><a href="/users/<%=current_user.id%>"><%=current_user.username%>'s Profile</a></h3>
-
-
   <h1> Choose a Category: </h1>
       <%@decks.each do |deck| %>
         <ul>
