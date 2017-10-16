@@ -14,9 +14,10 @@ end
 get '/users/:id' do
   @decks = Deck.all
   @deck = Deck.find_by(id: params[:id])
-  @card = Card.all
+  @cards = Card.all
   @card = Card.find_by(id: params[:id])
   @user = User.find(params[:id])
+  @round = Round.last
   erb :'/users/show'
 end
 

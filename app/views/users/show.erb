@@ -1,32 +1,55 @@
 <h1>Your Stats</h1>
 <container>
-<h1>Deck: Computer Science</h1>
+<h2>Deck: Computer Science</h2>
 <table>
   <tr>
     <td>Date</td>
-  <td>Time</td>
-  <td>Cards in Deck</td>
-  <td>First Guess Correct</td>
-  <td>Total Guesses</td>
+    <td>Time</td>
+    <td>Cards in Deck</td>
+    <td>First Guess Correct</td>
+    <td>Total Guesses</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><%=@round.created_at%></td>
+    <td><%=@round.created_at%></td>
+    <td><%=@cards.where(deck_id: 1).count%></td>
+    <td><%=current_user.guesses.where(correct: 1).count%></td>
+    <td><%=current_user.guesses.count%></td>
+  </tr>
+</table>
+<h2>Deck: Music</h2>
+<table>
+  <tr>
+    <td>Date</td>
+    <td>Time</td>
+    <td>Cards in Deck</td>
+    <td>First Guess Correct</td>
+    <td>Total Guesses</td>
   </tr>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><%=@round.created_at%></td>
+    <td><%=@round.created_at%></td>
+    <td><%=@cards.where(deck_id: 1).count%></td>
+    <td><%=current_user.guesses.where(correct: 1).count%></td>
+    <td><%=current_user.guesses.count%></td>
+  </tr>
+</table>
+<h2>Deck: Math</h2>
+<table>
+  <tr>
+    <td>Date</td>
+    <td>Time</td>
+    <td>Cards in Deck</td>
+    <td>First Guess Correct</td>
+    <td>Total Guesses</td>
+  </tr>
+  <tr>
+    <td><%=@round.created_at%></td>
+    <td><%=@round.created_at%></td>
+    <td><%=@cards.where(deck_id: 1).count%></td>
+    <td><%=current_user.guesses.where(correct: 1).count%></td>
+    <td><%=current_user.guesses.count%></td>
   </tr>
 </table>
 </container>
-<br />
-Total guesses: <%=current_user.guesses.count%>
-<br />
-Correct guesses: <%=current_user.guesses.where(correct: 1).count%>
-
+<p><a href="/">Back</a></p>
