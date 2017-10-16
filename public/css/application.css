@@ -1,6 +1,24 @@
-div {
+#container, div {
   border: 2px solid black;
-  margin: 5px;
-  padding: 5px;
+  margin: 10px;
+  padding: 10px;
   max-width: 50%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  background-color: LightBlue;
+  font-size: 18px;
+}
+
+#question, #form {
+  flex: 1;
+}
+
+p, h1 {
+margin: 10px;
+padding: 10px;
+}
+
+#flashcards {
+  color: magenta;
 }

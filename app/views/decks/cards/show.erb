@@ -1,0 +1,16 @@
+
+  <h1>Question <%=@card.id%></h1>
+  <div id="container">
+  <div id="question">
+  <%=@question%>
+</div>
+<div id="form">
+  <form action="/decks/<%=@deck.id%>/cards/<%=@current_card%>" method="post">
+    <label for="user_input">Your Guess:</label>
+    <input type="text" name="user[guess]" id="user_input">
+    <input type="submit" value="Submit" value="answer">
+  </form>
+  </div>
+</div>
+<a href="/decks/<%=@deck.id%>/cards/<%=session[:cards].sample%>">Next question</a>
+

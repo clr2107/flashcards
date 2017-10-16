@@ -1,15 +1,1 @@
-<div>
-<%@cards.each do |card|%>
-  <h1>Question</h1>
-    <%=card.question%>
-  <br />
-  <br />
-  <form action="/decks/<%=@deck.id%>/round/<%=@round.id%>/guess/<%=@guess.id%>" method="post">
-    <label for="guess">Your Guess:</label>
-    <input type="text" name="user[guess]">
-    <input type="submit" value="Submit">
-  </form>
-  <p><a href="/decks/<%=@deck.id%>/round/<%=@round.id%>/_answer">Click here to see the answer</a></p>
-  <%= erb :'decks/_answer', layout: false  %>
-<%end%>
-</div>
+test
