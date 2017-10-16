@@ -1,14 +1,15 @@
+<p id="logout"><a href="/logout">Logout</a></p>
 <h1 id="flashcards">Welcome to Flashcards</h1>
-<% if logged_in? %>
-  <p><a href="/logout">Logout</a></p>
+<% if current_user %>
+<h3><a href="/users/<%=current_user.id%>"><%=current_user.username%>'s Profile</a></h3>
+
+
   <h1> Choose a Category: </h1>
-    <%if @decks %>
       <%@decks.each do |deck| %>
         <ul>
           <li><a href="/decks/<%=deck.id%>"><%=deck.name%></a></li>
         </ul>
       <% end %>
-  <% end %>
 <% else %>
 <p><a href="/login">Login</a></p>
 <p><a href="/users/new">Register</a></p>

@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   has_many :decks
   has_many :rounds
+  has_many :guesses, through: :rounds, source: :guesses
 
   has_secure_password
 end

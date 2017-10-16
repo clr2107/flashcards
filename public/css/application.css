@@ -14,11 +14,16 @@
   flex: 1;
 }
 
-p, h1 {
+p, h1, h2, h3, h4 {
 margin: 10px;
 padding: 10px;
 }
 
 #flashcards {
   color: magenta;
+}
+
+#logout {
+  display: block;
+  float: right;
 }

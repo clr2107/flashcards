@@ -13,6 +13,7 @@ end
 
 get '/users/:id' do
   @decks = Deck.all
+  @deck = Deck.find_by(id: params[:id])
   @card = Card.all
   @card = Card.find_by(id: params[:id])
   @user = User.find(params[:id])
@@ -28,7 +29,7 @@ post '/login' do
   @user = @user.authenticate(params[:user][:password])
   if @user && @user.authenticate(params[:user][:password])
     session[:user_id] = @user.id
-    redirect "/users/#{@user.id}"
+    redirect "/"
   else
     @error = "Invalid login"
     erb :'/users/login'

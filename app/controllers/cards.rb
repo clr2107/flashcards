@@ -1,36 +1,38 @@
 get '/decks/:deck_id/cards/:card_id' do
   @deck = Deck.find_by(id: params[:deck_id])
   @cards = @deck.cards
-  @current_card = session[:cards].sample
-  @card = Card.find_by(id: @current_card)
-  @question = Card.find_by(id: @current_card).question
+  @card = Card.find_by(id: params[:card_id])
+
+  # @current_card = session[:cards].sample
+  @question = Card.find_by(id: @card).question
   erb :'/decks/cards/show'
+  # binding.pry
  end
 
 post '/decks/:deck_id/cards/:card_id' do
-  @deck = Deck.find_by(id: params[:id])
-  @current_card = session[:cards].sample
-  @card = Card.find_by(id: @current_card)
+  @deck = Deck.find_by(id: params[:deck_id])
+  @cards = @deck.cards
+  @card = Card.find_by(id: params[:card_id])
   @round = Round.last
-  @answer = @card.answer
-  # binding.pry
+  @answer = Card.find_by(id: params[:card_id]).answer
   if params[:user][:guess] == @card.answer
     Guess.create(text: params[:user][:guess], correct: 1, round_id: @round.id, card_id: @card.id)
     session[:cards] = session[:cards].reject { |card| card == @card.id }
-     erb :'/decks/_correct'
     if session[:cards].empty?
-      @errors = "You are done with this deck!"
+      redirect '/'
     else
-
-
-    end
+     redirect "/decks/#{params[:deck_id]}/cards/#{session[:cards].sample}"
+   end
   else
     Guess.create(text: params[:user][:guess], correct: 0, round_id: @round.id, card_id: @card.id)
-    @error = "Wrong"
-    # redirect '/'
+    redirect "/decks/#{params[:deck_id]}/cards/#{params[:card_id]}"
   end
 
-    # erb :'/cards/show'
 end
 
-
+get '/decks/:deck_id/cards/:card_id/answer' do
+    @current_card = session[:cards].sample
+  @card = Card.find_by(id: @current_card)
+  @answer = Card.find_by(id: @card.id).answer
+  erb :'/decks/cards/_answer'
+end
