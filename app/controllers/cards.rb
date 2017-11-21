@@ -31,8 +31,9 @@ post '/decks/:deck_id/cards/:card_id' do
 end
 
 get '/decks/:deck_id/cards/:card_id/answer' do
-    @current_card = session[:cards].sample
+  @current_card = session[:cards].sample
   @card = Card.find_by(id: @current_card)
+  @question = Card.find_by(id: @card).question
   @answer = Card.find_by(id: @card.id).answer
   erb :'/decks/cards/_answer'
 end

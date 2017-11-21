@@ -6,3 +6,7 @@ get '/' do
 
   erb :'/index'
 end
+
+get '/about' do
+  erb :'_about'
+end

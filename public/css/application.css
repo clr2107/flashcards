@@ -1,35 +1,11 @@
-
-#container, div {
-  border: 2px solid black;
-  margin: 10px;
-  padding: 10px;
-  max-width: 50%;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  background-color: LightBlue;
-  font-size: 18px;
-  font-family: Consolas;
+h1 {
+  text-align: center;
 }
 
 #question, #form {
   flex: 1;
 }
 
-p, h1, h2, h3, h4 {
-  font-family: Consolas;
-  margin: 10px;
-  padding: 10px;
-}
-
-#flashcards {
-  color: magenta;
-}
-
-#logout {
-  display: block;
-  float: right;
-}
 
 table, th, td {
   border: 1px solid black;
@@ -37,6 +13,10 @@ table, th, td {
   margin: 5px;
 }
 
-li {
-  font-family: Consolas;
+.flashcards {
+  padding-left: 10px;
+}
+
+.heading {
+  text-decoration: underline;
 }
