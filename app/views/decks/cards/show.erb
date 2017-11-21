@@ -11,10 +11,10 @@
               <input type="text" name="user[guess]" id="user_input">
               <input type="submit" value="Submit" value="answer">
             </form>
-  <br />
-  <a href="/decks/<%=@deck.id%>/cards/<%=@card.id%>/answer">View answer</a>
-  <p><a href="/decks/<%=@deck.id%>/cards/<%=session[:cards].sample%>">Next question</a></p>
-            </div>
-          </div>
-        </div>
+            <br />
+            <a href="/decks/<%=@deck.id%>/cards/<%=@card.id%>/answer">View answer</a>
+            <p><a href="/decks/<%=@deck.id%>/cards/<%=session[:cards].sample%>">Next question</a></p>
       </div>
+    </div>
+  </div>
+</div>

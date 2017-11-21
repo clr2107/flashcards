@@ -5,7 +5,6 @@ Deck.delete_all
 User.delete_all
 
 User.create(username: "Cat", email: "cat@cat.com", password: "cat1")
-User.create(username: "Amber", email: "amber@amber.com", password: "amber1")
 
 Deck.create(name: "Computer Science")
 Card.create(question: "What does HTML stand for?", answer: "Hypertext markup language", deck_id: 1)

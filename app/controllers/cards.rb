@@ -2,11 +2,9 @@ get '/decks/:deck_id/cards/:card_id' do
   @deck = Deck.find_by(id: params[:deck_id])
   @cards = @deck.cards
   @card = Card.find_by(id: params[:card_id])
-
   # @current_card = session[:cards].sample
   @question = Card.find_by(id: @card).question
   erb :'/decks/cards/show'
-  # binding.pry
  end
 
 post '/decks/:deck_id/cards/:card_id' do
