@@ -1,5 +1,6 @@
 <h1 id="flashcards">Welcome to Flashcards!</h1>
 <img src="http://www.alphabet-action.citymax.com/i/_Flash_Card_Q.jpg" alt="flashcards">
+<div class="deck-options">
 <% if current_user %>
     <h2>Choose a Category:</h2>
         <%@decks.each do |deck| %>
@@ -8,12 +9,15 @@
           </ul>
           <%end%>
         <% else %>
-         <h3>Featured Topics:</h3>
+        <div id="topics">
+         <h3 class="deck-options">Featured Topics:</h3>
       <ul class="deck-options">
         <li>Music</li>
         <li>Computer Science</li>
         <li>Basic Math</li>
       </ul>
+    </div>
+  </div>
 <% end %>
 
 

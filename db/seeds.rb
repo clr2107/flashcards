@@ -15,9 +15,12 @@ Deck.create(name: "Music")
 Card.create(question: "How many symphonies did Beethoven write?", answer: "9", deck_id: 2)
 Card.create(question: "Which Romantic composer died in an asylum?", answer: "Robert Schumann", deck_id: 2)
 Card.create(question: "What is a lied: a song, a symphony, or a concerto?", answer: "song", deck_id: 2)
+Card.create(question: "How many movements does pre-20th century symphony typically have?", answer: "4", deck_id: 2)
+
 
 Deck.create(name: "Math")
 Card.create(question: "2^2", answer: "4", deck_id: 3)
 Card.create(question: "6*8", answer: "48", deck_id: 3)
+Card.create(question: "7+3", answer: "10", deck_id: 3)
 
 

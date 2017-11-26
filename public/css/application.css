@@ -19,3 +19,7 @@ table, th, td {
 .heading {
   text-decoration: underline;
 }
+
+.deck-options {
+  text-align: center;
+}
