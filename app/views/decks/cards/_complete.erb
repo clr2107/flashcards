@@ -1,0 +1,5 @@
+<p>You have completed the <%=@deck.name%> deck.</p>
+<%total = current_user.guesses.where(correct: 1, round_id: @round.id).count - current_user.guesses.where(correct: 0, round_id: @round.id).count%>
+<p>You got <%=total%> out of <%=@cards.count%> cards correct on the first try.</p>
+<p><a href="/decks/<%=@deck.id%>">Play again</a></p>
+<p><a href="/">Back to Home</a></p>

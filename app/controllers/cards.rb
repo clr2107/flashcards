@@ -2,7 +2,6 @@ get '/decks/:deck_id/cards/:card_id' do
   @deck = Deck.find_by(id: params[:deck_id])
   @cards = @deck.cards
   @card = Card.find_by(id: params[:card_id])
-  # @current_card = session[:cards].sample
   @question = Card.find_by(id: @card).question
   erb :'/decks/cards/show'
  end
@@ -17,7 +16,7 @@ post '/decks/:deck_id/cards/:card_id' do
     Guess.create(text: params[:user][:guess], correct: 1, round_id: @round.id, card_id: @card.id)
     session[:cards] = session[:cards].reject { |card| card == @card.id }
     if session[:cards].empty?
-      redirect '/'
+      erb :'/decks/cards/_complete'
     else
      redirect "/decks/#{params[:deck_id]}/cards/#{session[:cards].sample}"
    end
@@ -25,7 +24,6 @@ post '/decks/:deck_id/cards/:card_id' do
     Guess.create(text: params[:user][:guess], correct: 0, round_id: @round.id, card_id: @card.id)
     redirect "/decks/#{params[:deck_id]}/cards/#{params[:card_id]}"
   end
-
 end
 
 get '/decks/:deck_id/cards/:card_id/answer' do
