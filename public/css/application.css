@@ -31,3 +31,7 @@ nav, footer, .page-footer {
 nav li a:hover {
   background-color: LightBlue;
 }
+
+#header {
+  text-align: center;
+}
