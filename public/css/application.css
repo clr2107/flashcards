@@ -23,3 +23,11 @@ table, th, td {
 .deck-options {
   text-align: center;
 }
+
+nav, footer, .page-footer {
+  background-color: DarkBlue;
+}
+
+nav li a:hover {
+  background-color: LightBlue;
+}
