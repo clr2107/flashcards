@@ -33,3 +33,13 @@ get '/decks/:deck_id/cards/:card_id/answer' do
   @answer = Card.find_by(id: @card.id).answer
   erb :'/decks/cards/_answer'
 end
+
+post '/cards' do
+  @deck = Deck.last
+  @card = Card.new(question: params[:card][:question], answer: params[:card][:answer], deck_id: @deck.id)
+  if @card.save
+    redirect '/'
+  else
+    erb :'/new_card'
+  end
+end

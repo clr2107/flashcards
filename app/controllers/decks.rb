@@ -7,5 +7,14 @@ get '/decks/:id' do
   erb :'/decks/new'
 end
 
+post '/decks' do
+  @deck = Deck.new(params[:deck])
+  if @deck.save
+    redirect '/'
+  else
+    erb :'/new_deck'
+  end
+end
+
 
 

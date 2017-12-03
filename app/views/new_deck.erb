@@ -1,0 +1,19 @@
+<h3>Add a new deck</h3>
+<form action="/decks" method="post">
+  <label for="name">Name:</label>
+  <input type="text" name="deck[name]" placeholder="Name of your deck">
+  <input type="submit" value="Submit">
+</form>
+
+<h3>Add some cards to your deck</h3>
+<form action="/cards" method="post">
+  <label for="question">Question:</label>
+  <input type="text" name="card[question]" placeholder="type question here">
+  <label for="answer">Answer:</label>
+  <input type="text" name="card[answer]" placeholder="type answer here">
+  <label for="deck_id">Deck Id:</label>
+  <input type="text" name="card[deck_id]">
+  <input type="submit" value="Submit">
+</form>
+
+
