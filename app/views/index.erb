@@ -1,20 +1,24 @@
 <div id="header">
   <h1 id="flashcards">Welcome to Flashcards!</h1>
   <h5><i>Your Personalized Flashcard Application</i></h5>
-  <p>Features multiple subjects | Track your progress and statistics</p>
+
+    <li>Choose from multiple subjects</li>
+    <li>Track progress and statistics</li>
+    <li>Create your own topic and add cards</li>
+
 </div>
 <img src="http://www.alphabet-action.citymax.com/i/_Flash_Card_Q.jpg" alt="flashcards">
 <div class="deck-options">
 <% if current_user %>
-    <h2>Choose a Category:</h2>
+    <h3>Choose a Category:</h3>
         <% @decks.each do |deck| %>
           <ul>
             <li><a href="/decks/<%=deck.id%>"><%=deck.name%></a></li>
           </ul>
           <% end %>
-           <h2>Or Create a New Deck and Add Cards</h2>
+           <h3>Or Create a New Deck and Add Cards:</h3>
   <p><a href="/new_deck">Add new topic</a></p>
-  <p><a href="/new_card">Add cards to an existing topic:</a></p>
+  <p><a href="/new_card">Add cards to an existing topic</a></p>
         <% else %>
         <div id="topics">
          <h3 class="deck-options">Featured Topics:</h3>
