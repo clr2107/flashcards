@@ -1,33 +1,30 @@
 <div id="header">
-  <h1 id="flashcards">Welcome to Flashcards!</h1>
+  <h1 id="flashcards">FLASHCARDS</h1>
   <h5><i>Your Personalized Flashcard Application</i></h5>
-
     <li>Choose from multiple subjects</li>
     <li>Track progress and statistics</li>
     <li>Create your own topic and add cards</li>
-    <p>Don't have an account yet? <a href="/users/new">Sign up here</a></p>
 </div>
-
-
 <img src="http://www.alphabet-action.citymax.com/i/_Flash_Card_Q.jpg" alt="flashcards">
 <div class="deck-options">
 <% if current_user %>
     <h3>Choose a Category:</h3>
-        <% @decks.each do |deck| %>
-          <ul>
-            <li><a href="/decks/<%=deck.id%>"><%=deck.name%></a></li>
-          </ul>
-          <% end %>
-           <h3>Or Create a New Deck and Add Cards:</h3>
-  <p><a href="/new_deck">Add new topic</a></p>
-  <p><a href="/new_card">Add cards to an existing topic</a></p>
-        <% else %>
-        <div id="topics">
-         <h3 class="deck-options">Featured Topics:</h3>
+      <% @decks.each do |deck| %>
+        <ul>
+          <li><a href="/decks/<%=deck.id%>"><%=deck.name%></a></li>
+        </ul>
+      <% end %>
+       <h3>Create a New Topic and Add Cards:</h3>
+        <p><a href="/new_deck">Add new topic</a></p>
+        <p><a href="/new_card">Add cards to an existing deck</a></p>
+<% else %>
+    <p>Don't have an account yet? <a href="/users/new">Sign up here</a></p>
+    <div id="topics">
+     <h3 class="deck-options">Featured Topics:</h3>
       <ul class="deck-options">
-        <li>Music</li>
-        <li>Computer Science</li>
-        <li>Basic Math</li>
+        <% @decks.each do |deck| %>
+          <li><%=deck.name%></li>
+        <% end %>
       </ul>
     </div>
   </div>
