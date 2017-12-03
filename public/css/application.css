@@ -35,3 +35,8 @@ nav li a:hover {
 #header {
   text-align: center;
 }
+
+#topics {
+  display: block;
+  float: left;
+}
